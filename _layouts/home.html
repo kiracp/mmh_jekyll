@@ -5,7 +5,11 @@ layout: default
 <div>
 
    <img class="mmh-logo" src="/assets/img/home_background.png" alt="Monthly Music Hackathon logo featuring crossed axes on a blue vinyl record">
-
+   <audio controls>
+     <source src="/assets/sounds/Record-Needle-Scratch.mp3">
+       <!-- Need to add a.ogg file -->
+       <!-- Introduce Hover https://css-tricks.com/play-sound-on-hover/-->
+   </audio>
   <div class="mmh-home-description">
     {{site.description}}
   </div>
@@ -13,14 +17,14 @@ layout: default
   <div class="page-content-col-wrapper">
     <div class="page-content-col">
       <h2 class="item-list-heading">Upcoming events</h2>
-      {% assign nextEvents = 
+      {% assign nextEvents =
           ((site.events | where_exp:"event", "event.date >= site.time") | sort: 'date' %}
       {% include event_list.html events=nextEvents limit=3 %}
     </div>
 
     <div class="page-content-col">
       <h2 class="item-list-heading">Recent events</h2>
-      {% assign pastEvents = 
+      {% assign pastEvents =
           ((site.events | where_exp:"event", "event.date <= site.time") | sort: 'date' | reverse %}
       {% include event_list.html events=pastEvents limit=2 %}
     </div>
