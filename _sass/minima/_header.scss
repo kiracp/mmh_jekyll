@@ -11,6 +11,7 @@
 }
 
 .site-title {
+  color: $text-color;
   font-size: $site-title-font-size;
   font-weight: 300;
   line-height: $large-line-height;
@@ -20,7 +21,7 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: $mmh-blue;
   }
 }
 
