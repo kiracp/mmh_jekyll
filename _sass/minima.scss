@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
 @charset "utf-8";
 
 // Define defaults for each variable.
 
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: 'VT323', monospace;
 $base-font-weight: 400;
 $base-font-size:   16px;
 $small-font-size:       $base-font-size * 0.875;
@@ -19,7 +20,7 @@ $large-line-height: $base-line-height * $base-font-size * 2.25;
 $spacing-unit:     30px;
 $half-spacing-unit: $spacing-unit / 2;
 
-$text-color:       #111;
+$text-color:       #fff;
 $background-color: #fdfdfd;
 $mmh-blue:         #398EC3;
 $mmh-blue-dark:    darken($mmh-blue, 20%);
@@ -33,6 +34,17 @@ $content-width:    800px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
+
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(135deg, top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(135deg, top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(135deg, to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#68faac', endColorstr='#1f73dd',GradientType=1 ); /* IE6-9 */
+}
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -52,5 +64,6 @@ $on-laptop:        800px;
   "minima/base",
   "minima/header",
   "minima/footer",
-  "minima/layout"
+  "minima/layout",
+  "minima/custom"
 ;
